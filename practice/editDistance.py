@@ -21,6 +21,6 @@ def editDistance(S, T):
     print()
     return E[m][n]
 
-S = 'strong'
-T = 'stone'
+S = 'daphnia'
+T = 'adelphia'
 print(editDistance(S, T))
