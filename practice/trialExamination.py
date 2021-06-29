@@ -17,8 +17,9 @@ def solution(answers):
 
     tmp = []
     maxvalue = max(result1, result2, result3)
+    result = [result1, result2, result3]
     for _ in range(3):
-        if maxvalue == result1:
+        if maxvalue == result[_]:
             tmp.append(_ + 1)
 
     return tmp
