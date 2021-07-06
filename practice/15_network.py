@@ -5,44 +5,34 @@ from collections import deque
 def solution(n, computers):
     answer = 0
 
-    network = [-1] * (n)
-    visited = [0] * (n)
+    visited = [0] * n
+
+    def next(computers, n):
+        tmp = []
+        for i in range(len(computers)):
+            if computers[n][i] == 1:
+                tmp.append(i)
+        return tmp
+
     for i in range(n):
-        next = []
-        for j in range(n):
-            if i == j:
-                continue
-            if computers[i][j] == 1:
-                next.append((i, j))
-        q = deque()
-        q.append(next)
-        if network[i] == -1:
-            network[i] = i
-        visited[i] = 1
-
-        while q != deque([[]]):
-            next = []
-            now = q.popleft()
-            print('now', now)
-            for item in now:
-                for j in range(n):
-                    if item[1] == j:
-                        continue
-                    if computers[item[1]][j] == 1 and visited[item[1]] == 0:
-                        network[item[1]] = i
-                        next.append((item[1], j))
-                        visited[item[1]] = 1
-
-            q.append(next)
-
-    print(network)
-    for i in range(n):
-        for j in range(n):
-            if network[j] == i:
-                answer += 1
-                break
+        if visited[i] == 0:
+            answer += 1
+            q = deque()
+            visited[i] = 1
+            for nex in (next(computers, i)):
+                q.append(nex)
+            while q:
+                #print(q)
+                ne = q.popleft()
+                #print(ne) # 0 1
+                if visited[ne] == 0:
+                    visited[ne] = 1
+                    for nex in next(computers, ne):
+                        q.append(nex)
 
     return answer
+
+
 
 n = 3
 computers = [[1, 1, 0], [1, 1, 1], [0, 1, 1]]
