@@ -20,12 +20,19 @@
 
 # https://www.acmicpc.net/problem/10872
 
+# n = int(input())
+#
+# dp = [1] * (n + 1)
+#
+# for i in range(2, n + 1):
+#     dp[i] = dp[i-1] * i
+#
+#
+# print(dp[-1])
+
 n = int(input())
 
-dp = [1] * (n + 1)
-
+start = 1
 for i in range(2, n + 1):
-    dp[i] = dp[i-1] * i
-
-
-print(dp[-1])
+    start *= i
+print(start)
