@@ -9,35 +9,42 @@ def solution(s):
     string = []
 
     num = {'zero': 0, 'one': 1,'two': 2,'three': 3,'four':4 ,'five': 5,'six': 6,'seven': 7,'eight': 8,'nine':9}
-    while i < n:
-        if ''.join(string) in num:
-            ans.append(''.join(string))
-            string = []
 
-        if s[i].isdigit():
-            ans.append(s[i])
-            string = []
-        else:
-            string.append((s[i]))
+    for key in num.keys():
+        s = s.replace(key, str(num[key]))
 
-        #print(string)
+    answer = s
 
-        i += 1
-
-    if string:
-        if ''.join(string) in num:
-            ans.append(''.join(string))
-    #print(ans)
-    answer = ''
-    for i, a in enumerate(ans):
-        #print(a)
-
-        if a.isdigit():
-            answer += a
-        else:
-            answer += str(num[a])
+    # while i < n:
+    #     if ''.join(string) in num:
+    #         ans.append(''.join(string))
+    #         string = []
+    #
+    #     if s[i].isdigit():
+    #         ans.append(s[i])
+    #         string = []
+    #     else:
+    #         string.append((s[i]))
+    #
+    #     #print(string)
+    #
+    #     i += 1
+    #
+    # if string:
+    #     if ''.join(string) in num:
+    #         ans.append(''.join(string))
+    # #print(ans)
+    # answer = ''
+    # for i, a in enumerate(ans):
+    #     #print(a)
+    #
+    #     if a.isdigit():
+    #         answer += a
+    #     else:
+    #         answer += str(num[a])
 
     #print(answer)
+
     return int(answer)
 
 s = 'one4seveneight'
