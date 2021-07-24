@@ -12,13 +12,13 @@ for test_case in range(1, T + 1):
         elif r == ')':
             if stack and stack[-1] == '(':
                 stack.pop()
-            elif not stack:
+            else:
                 flag = True
                 break
         elif r == '}':
             if stack and stack[-1] == '{':
                 stack.pop()
-            elif not stack:
+            else:
                 flag = True
                 break
     if stack or flag:
