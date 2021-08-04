@@ -50,14 +50,9 @@ for i in A:
         brokenCnt += 1
 
 while brokenCnt < k:
-    #print(A, robots, onRobot)
     rotate()
-    #print(A, robots, onRobot)
     move_robot()
-    #print(A, robots, onRobot)
-    # print(A)
     on_robot()
-    #print(A, robots, onRobot)
     brokenCnt = check()
     if brokenCnt < k:
         stage += 1
