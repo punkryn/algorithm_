@@ -11,46 +11,49 @@ from sys import stdin
 
 n, l = map(int, input().split())
 
-stations = [[] for _ in range(n + 1 + n + 1)]
+stations = [[] for _ in range(200020)]
+d = [0] * 200020
 for i in range(1, l + 1):
     station = list(map(int, stdin.readline().split()))[:-1]
     for s in station:
-        stations[i + n].append(s)
-        stations[s].append(i + n)
+        stations[i + n].append((s, 0))
+        stations[s].append((i + n, 1))
 
-# print(stations[:11], stations[100000: 100011])
+for iii in range(13):
+    print(stations[iii])
 
 start, end = map(int, input().split())
 
-# print(graph)
+INF = int(1e9) + 7
 
-# print(stations)
-
-q = deque()
-q.append((start + n, 0))
-visited = [0] * (n + 1)
-visited[start] = 1
-
-if end in stations[start + n]:
-    ans = 0
-    q.popleft()
+if start == end:
+    print(0)
 else:
-    ans = -1
-while q:
-    # print(q)
-    now, cost = q.popleft()
-    # print(now, cost)
+    q = deque()
+    q.append(start)
+    for _ in range(1, n + l + 1):
+        d[_] = INF
+    d[start] = 0
 
-    if now - n == end:
-        ans = cost
-        break
-    # print(now)
-    for p in stations[now]:
-        # print(p)
-        if visited[p] == 0:
-            visited[p] = 1
-            q.append((p + n, cost + 1))
+    while q:
+        # print(q)
+        print(q, d[:15])
+        cur = q.popleft()
+        # print(now, cost)
 
+        for p in stations[cur]:
+            # print(p)
+            nxt, w = p
+            if d[nxt] <= d[cur] + 1:
+                continue
 
-# print(distance)
-print(ans)
+            d[nxt] = d[cur] + w
+            q.append(nxt)
+
+    if d[end] == INF:
+        ans = -1
+    else:
+        ans = d[end] - 1
+    # print(d[:20])
+    print(ans)
+
