@@ -32,6 +32,7 @@ a.sort()
 
 for j in x:
     if a[bisect.bisect(a, j) - 1] == j:
+        print(bisect.bisect(a, j))
         print(1)
     else:
         print(0)

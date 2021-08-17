@@ -23,10 +23,11 @@ def solution(N, number):
 
         for num in union[i]:
             if num == number:
+                print(union)
                 answer = i + 1
                 return answer
     return answer
 
-n = 2
-number = 11
+n = 5
+number = 12
 print(solution(n, number))

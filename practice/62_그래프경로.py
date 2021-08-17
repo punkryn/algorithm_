@@ -17,11 +17,11 @@ for test_case in range(1, T + 1):
 
     q = deque()
     q.append(s)
+    visited[s] = 1
 
     flag = 0
     while q:
         now = q.popleft()
-        visited[now] = 1
 
         if now == g:
             flag = 1
@@ -30,5 +30,6 @@ for test_case in range(1, T + 1):
         for nxt in graph[now]:
             if visited[nxt] == 0:
                 q.append(nxt)
+                visited[now] = 1
 
     print("#" + str(test_case), flag)

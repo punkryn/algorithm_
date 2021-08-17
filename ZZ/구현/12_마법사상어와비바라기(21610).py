@@ -97,7 +97,7 @@ for inf in info:
     d, s = inf
 
     clouds = move_cloud(d - 1, s)
-    #print(clouds)
+    print(clouds)
     rain()
 
     prev = copy.deepcopy(clouds)
@@ -105,6 +105,7 @@ for inf in info:
 
     water_copy_bug()
     make_cloud()
+    print('1', clouds)
 
 total = 0
 for i in range(n):

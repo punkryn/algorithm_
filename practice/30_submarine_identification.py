@@ -82,3 +82,14 @@ while index < len(n):
 
 #print(index)
 print(answer)
+
+# import re
+#
+# n = input()
+#
+# p = re.compile('(100+1+|01)+')
+# m = p.fullmatch(n)
+# if m:
+#     print('SUBMARINE')
+# else:
+#     print('NOISE')

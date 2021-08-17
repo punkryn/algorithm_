@@ -19,9 +19,9 @@ while high < n:
     print(low, high, s)
     if s >= m:
         count += 1 if s == m else 0
-        s -= a[low]
+        # s -= a[low]
         low += 1
     else:
-        s += a[high]
+        # s += a[high]
         high += 1
 print(count)

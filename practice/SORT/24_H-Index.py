@@ -28,5 +28,5 @@ def solution(citations):
     return answer
 
 #citations = [7]
-citations = [0, 0]
+citations = [3, 4, 4]
 print(solution(citations))

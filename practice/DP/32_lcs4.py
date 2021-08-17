@@ -17,6 +17,8 @@ a.insert(0, 0)
 for i in range(1, n + 1):
     a[i] = order[a[i]]
 
+print(a, order)
+
 ans = 0
 dp1 = [-1]
 for i in range(1, n + 1):

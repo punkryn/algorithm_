@@ -1,3 +1,5 @@
-x = 3
-y = -2
-print(-(-x // y))
+a = set()
+a.add(1)
+a.add(2)
+for tmp in a:
+    print(tmp)
