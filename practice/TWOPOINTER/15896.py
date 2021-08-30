@@ -10,6 +10,7 @@ input = stdin.readline
 INT_MAX = 2147483647
 INT_MIN = -2147483647 - 1
 
+
 def Solve1():
     bitcnt = [0] * 30
     bitsum = [0] * 30
