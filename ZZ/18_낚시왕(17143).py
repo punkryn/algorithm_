@@ -3,6 +3,7 @@
 from sys import stdin
 from collections import deque
 
+
 def shark_move():
     tmp2 = [[deque() for _ in range(c+1)] for _ in range(r+1)]
     for i in range(1, r + 1):
