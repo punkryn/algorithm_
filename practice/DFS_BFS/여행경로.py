@@ -2,6 +2,7 @@
 
 from collections import defaultdict
 
+
 def solution(tickets):
     # 특정 티켓의 인접 리스트를 구하는 함수
     def init_graph():
