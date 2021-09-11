@@ -9,7 +9,6 @@
 from sys import stdin
 
 n, m = map(int, stdin.readline().split())
-
 a = list(map(int, stdin.readline().split()))
 
 low, high = 0, 0
