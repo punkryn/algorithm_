@@ -23,4 +23,5 @@ while high < n:
     else:
         # s += a[high]
         high += 1
+
 print(count)
