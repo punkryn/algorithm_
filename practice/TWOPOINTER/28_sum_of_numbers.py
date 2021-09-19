@@ -4,6 +4,7 @@
 # 11 5
 # 1 2 3 4 2 5 3 1 1 2 5
 
+
 # https://www.acmicpc.net/problem/2003
 
 from sys import stdin
